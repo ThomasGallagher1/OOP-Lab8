@@ -9,18 +9,19 @@ public class CreateFile {
         String fileName = "File13.txt";
 
         File myFile = new File(fileName);
-
-        try{
+        try {
             if(myFile.createNewFile())
             {
                 System.out.println("File created successfully at " + myFile.getAbsolutePath());
             }
-            else{
-                System.out.println("File already at  " + myFile.getAbsolutePath());
+            else {
+                System.out.println("File exists at " + myFile.getAbsolutePath());
             }
+
         }catch(IOException e)
         {
             System.out.println("An error occured");
+            e.printStackTrace();
         }
     }
 }
