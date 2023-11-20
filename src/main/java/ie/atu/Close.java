@@ -1,17 +1,19 @@
 package ie.atu;
 
-import java.io.File;
-import java.io.FileWriter;
+
 import java.io.IOException;
-public class Append {
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+public class Close {
     public static void main(String[] args)
     {
         String fileName = "File13.txt";
 
 
-        try (FileWriter myFile = new FileWriter(fileName, true)){
-            myFile.write("Tuesday Traffic is going to be awful");
-            myFile.append("Thomas Gallagher");
+        try (PrintWriter myFile = new PrintWriter (new FileWriter(fileName, true))){
+            myFile.println("Monday Traffic is going to be awful");
+            myFile.printf("Thomas Gallagher");
 
         }catch(IOException e)
         {
